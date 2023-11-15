@@ -1,3 +1,12 @@
+<!-- 
+Aluno1: Jocelito Climeres de Souza Junior
+Aluno2:
+Aluno3:
+Aluno4:
+Aluno5:
+Aluno6:
+ -->
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -32,16 +41,21 @@
                 let salario = prompt('Digite seu salário');
                 salario = Number(salario);
 
-                if (salario <= 1200) {
-                    const novoSalário = salario + (salario * 15 / 100);
-                    alert(`Seu novo salário será: R$${novoSalário.toFixed(2)}`);
-                    console.log('1')
+                let novoSalário;
+
+                if (isNaN(salario)) {
+                    alert('O salário digitado é inválido');
+
+                } else if (salario <= 1200) {
+                    novoSalário = salario + (salario * 15 / 100);
+                    alert(`Seu novo salário será: R$${novoSalário.toFixed(2)}`);   
+
                 } else if (salario <= 2400) {
-                    const novoSalário = salario + (salario * 10 / 100);
-                    alert(`Seu novo salário será: R$${novoSalário.toFixed(2)}`);
-                    console.log('2')
+                    novoSalário = salario + (salario * 10 / 100);
+                    alert(`Seu novo salário será: R$${novoSalário.toFixed(2)}`); 
+
                 } else {
-                    const novoSalário = salario + (salario * 5 / 100);
+                    novoSalário = salario + (salario * 5 / 100);
                     alert(`Seu novo salário será: R$${novoSalário.toFixed(2)}`);
                 }
 
@@ -49,28 +63,37 @@
                 let salario = prompt('Digite seu salário');
                 salario = Number(salario);
 
-                const salarioFerias = salario + (salario / 3);
-                alert(`Seu salário de férias é: R$${salarioFerias.toFixed(2)}`);
+                if (isNaN(salario)) {
+                    alert('O salário digitado é inválido');
+
+                } else {
+                    const salarioFerias = salario + (salario / 3);
+                    alert(`Seu salário de férias é: R$${salarioFerias.toFixed(2)}`);
+                }
 
             } else if (opçãoEscolhida === 3) {
                 let salario = prompt('Digite seu salário');
                 salario = Number(salario);
 
-                let mesesDeTrabalho = prompt('Digite a quantidade de meses trabalhando na empresa(máximo 12)');
-                mesesDeTrabalho = Number(mesesDeTrabalho);
-
-                if (mesesDeTrabalho > 12 || mesesDeTrabalho < 1) {
-                    alert('Quantidade de meses inválida');
+                if (isNaN(salario)) {
+                    alert('O salário digitado é inválido');
                 } else {
-                    const decimoTerceiro = salario * mesesDeTrabalho / 12;
-                    alert(`Seu décimo terceiro será de: R$${decimoTerceiro.toFixed(2)}`);
-                }
-                
-            } else {                               
-                i = 999;                
-                alert('Você saiu do programa');               
-            }
+                    let mesesDeTrabalho = prompt('Digite a quantidade de meses trabalhando na empresa(máximo 12)');
+                    mesesDeTrabalho = Number(mesesDeTrabalho);
 
+
+                    if (mesesDeTrabalho > 12 || mesesDeTrabalho < 1 || isNaN(mesesDeTrabalho)) {
+                        alert('Quantidade de meses inválida');
+                        
+                    } else {
+                        const decimoTerceiro = salario * mesesDeTrabalho / 12;
+                        alert(`Seu décimo terceiro será de: R$${decimoTerceiro.toFixed(2)}`);
+                    }
+                }
+            } else {
+                i = 999;
+                alert('Você saiu do programa');
+            }
         }
     </script>
 </body>
